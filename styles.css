@@ -3,3 +3,96 @@
   box-sizing: border-box;
   margin: 0px;
 }
+
+/* 1. Global Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f9;
+}
+
+/* 2. Header and Navbar Layout */
+.header-container {
+  background-color: #1a1a24;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+}
+
+/* 3. Logo Styling */
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+/* 4. Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-item {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #38bdf8; /* Accent color on hover */
+}
+
+/* 5. Call To Action Button */
+.cta-btn {
+  background-color: #38bdf8;
+  color: #1a1a24;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.cta-btn:hover {
+  background-color: #0ea5e9;
+  transform: translateY(-1px);
+}
+
+/* 6. Responsive Rules (Mobile Friendly) */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-item {
+    font-size: 0.9rem;
+  }
+
+  .cta-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
