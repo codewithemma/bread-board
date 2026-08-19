@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breadboard — Contact</title>
+  <link rel="stylesheet" href="styles.css">
+      <!-- Nav bar start -->
+    <nav class="navbar">
+      <!-- Brand Logo -->
+      <div class="logo">
+        <a href="#">BrandLogo</a>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="#" class="nav-item">Home</a></li>
+        <li><a href="#" class="nav-item">About</a></li>
+        <li><a href="#" class="nav-item">Services</a></li>
+        <li><a href="#" class="nav-item">Testimonials</a></li>
+        <li><a href="#" class="nav-item">Contact</a></li>
+        <li><a href="#" class="nav-item">Portfolio</a></li>
+      </ul>
+
+      <!-- Call to Action Button -->
+      <div class="nav-cta">
+        <a href="/login" class="cta-btn">Get Started</a>
+      </div>
+    </nav>
+    <!-- nav end -->
+  <style>
+    :root {
+      --espresso: #2b1d18;
+      --brown: #3b2821;
+      --taupe: #9a887b;
+      --warm-taupe: #c9b8a9;
+      --cream: #f3eee7;
+      --white: #fffdf9;
+      --line: rgba(59, 40, 33, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--cream);
+      color: var(--espresso);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 8px 40px;
+    }
+
+    .logo {
+      color: var(--espresso);
+      font-size: 1.15rem;
+      font-weight: 650;
+      letter-spacing: -0.045em;
+      text-decoration: none;
+    }
+
+    .header-label {
+      color: var(--taupe);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    /* Main */
+
+    .contact-shell {
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(400px, 1.1fr);
+      min-height: calc(100vh - 130px);
+      overflow: hidden;
+      border-radius: 28px;
+      background: var(--white);
+      box-shadow:
+        0 25px 80px rgba(43, 29, 24, 0.08),
+        0 4px 18px rgba(43, 29, 24, 0.04);
+    }
+
+    /* Left panel */
+
+    .intro {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(48px, 7vw, 100px);
+      background: var(--espresso);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .intro::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -230px;
+      bottom: -190px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 60px rgba(255, 255, 255, 0.025),
+        0 0 0 120px rgba(255, 255, 255, 0.018);
+    }
+
+    .intro-content {
+      position: relative;
+      z-index: 1;
+      max-width: 480px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 34px;
+      color: var(--warm-taupe);
+      font-size: 0.68rem;
+      font-weight: 650;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      background: var(--warm-taupe);
+    }
+
+    h1 {
+      max-width: 520px;
+      font-size: clamp(3.2rem, 6vw, 6.5rem);
+      font-weight: 400;
+      line-height: 0.94;
+      letter-spacing: -0.07em;
+    }
+
+    h1 em {
+      color: var(--warm-taupe);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    .description {
+      max-width: 390px;
+      margin-top: 32px;
+      color: #cfc1b7;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .contact-details {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 25px;
+    }
+
+    .detail-label {
+      margin-bottom: 7px;
+      color: #8f7b6d;
+      font-size: 0.62rem;
+      font-weight: 650;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .detail-value {
+      color: #f6f1eb;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: color 180ms ease;
+    }
+
+    a.detail-value:hover {
+      color: var(--warm-taupe);
+    }
+
+    /* Social */
+
+    .socials {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      gap: 9px;
+      margin-top: 46px;
+    }
+
+    .social {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 50%;
+      color: #d7cbc2;
+      font-size: 0.72rem;
+      text-decoration: none;
+      transition:
+        background 180ms ease,
+        color 180ms ease,
+        border-color 180ms ease;
+    }
+
+    .social:hover {
+      background: var(--white);
+      border-color: var(--white);
+      color: var(--espresso);
+    }
+
+    /* Right panel */
+
+    .form-panel {
+      display: flex;
+      align-items: center;
+      padding: clamp(48px, 8vw, 110px);
+      background: var(--white);
+    }
+
+    .form-wrapper {
+      width: 100%;
+      max-width: 620px;
+      margin: auto;
+    }
+
+    .form-heading {
+      margin-bottom: 55px;
+    }
+
+    .form-heading h2 {
+      margin-bottom: 13px;
+      color: var(--espresso);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      font-weight: 500;
+      letter-spacing: -0.055em;
+    }
+
+    .form-heading p {
+      max-width: 390px;
+      color: var(--taupe);
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    /* Form */
+
+    .form {
+      display: grid;
+      gap: 0;
+    }
+
+    .field {
+      position: relative;
+      margin-bottom: 34px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 10px;
+      color: #75645a;
+      font-size: 0.65rem;
+      font-weight: 650;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      outline: none;
+      border-radius: 0;
+      background: transparent;
+      color: var(--espresso);
+      font: inherit;
+      font-size: 0.95rem;
+      padding: 8px 0 15px;
+      transition: border-color 200ms ease;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #c1b4aa;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-bottom-color: var(--espresso);
+    }
+
+    .field textarea {
+      min-height: 125px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    /* Button */
+
+    .submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      margin-top: 18px;
+    }
+
+    .submit-note {
+      max-width: 210px;
+      color: #a4958a;
+      font-size: 0.68rem;
+      line-height: 1.6;
+    }
+
+    .submit {
+      flex-shrink: 0;
+      min-width: 175px;
+      padding: 16px 25px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--brown);
+      color: white;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 650;
+      letter-spacing: -0.01em;
+      box-shadow: 0 8px 20px rgba(59, 40, 33, 0.16);
+      transition:
+        transform 180ms ease,
+        background 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .submit:hover {
+      background: var(--espresso);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(59, 40, 33, 0.22);
+    }
+
+    .submit:active {
+      transform: translateY(0);
+    }
+
+    /* Footer */
+
+    .footer {
+      padding: 28px 8px 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--taupe);
+      font-size: 0.64rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .page {
+        padding: 20px;
+      }
+
+      header {
+        padding-bottom: 25px;
+      }
+
+      .contact-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .intro {
+        min-height: 620px;
+      }
+
+      .form-panel {
+        min-height: 650px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        padding: 12px;
+      }
+
+      header {
+        padding: 10px 7px 20px;
+      }
+
+      .header-label {
+        display: none;
+      }
+
+      .contact-shell {
+        border-radius: 20px;
+      }
+
+      .intro {
+        min-height: 590px;
+        padding: 42px 28px;
+      }
+
+      h1 {
+        font-size: clamp(3.2rem, 16vw, 5rem);
+      }
+
+      .description {
+        font-size: 0.86rem;
+      }
+
+      .form-panel {
+        padding: 50px 28px;
+      }
+
+      .form-heading {
+        margin-bottom: 42px;
+      }
+
+      .submit-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .submit {
+        width: 100%;
+      }
+
+      .submit-note {
+        order: 2;
+      }
+
+      .footer {
+        padding: 20px 7px 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header>
+      <a href="#" class="logo">Breadboard</a>
+      <span class="header-label">Let's build something</span>
+    </header>
+
+    <main class="contact-shell">
+
+      <!-- Left side -->
+      <section class="intro">
+
+        <div class="intro-content">
+          <div class="eyebrow">Contact</div>
+
+          <h1>
+            Let’s make<br />
+            something <em>great.</em>
+          </h1>
+
+          <p class="description">
+            Have a project in mind, a question, or simply want to say hello?
+            We’d love to hear from you. Drop us a line and we'll get back to you.
+          </p>
+        </div>
+
+        <div>
+          <div class="contact-details">
+
+            <div>
+              <div class="detail-label">Email</div>
+              <a
+                class="detail-value"
+                href="mailto:hello@breadboard.design"
+              >
+                hello@breadboard.design
+              </a>
+            </div>
+
+            <div>
+              <div class="detail-label">Based in</div>
+              <span class="detail-value">
+                Lagos · London · Everywhere
+              </span>
+            </div>
+
+          </div>
+
+          <nav class="socials" aria-label="Social links">
+            <a href="#" class="social" aria-label="Instagram">ig</a>
+            <a href="#" class="social" aria-label="Dribbble">dr</a>
+            <a href="#" class="social" aria-label="LinkedIn">in</a>
+          </nav>
+        </div>
+
+      </section>
+
+      <!-- Right side -->
+      <section class="form-panel">
+
+        <div class="form-wrapper">
+
+          <div class="form-heading">
+            <h2>Send us a message.</h2>
+            <p>
+              Tell us a little about yourself and what you're working on.
+              We’ll be in touch shortly.
+            </p>
+          </div>
+
+          <form class="form" action="#" method="post">
+
+            <div class="field">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us about your project..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="submit-row">
+              <p class="submit-note">
+                By sending this form, you agree to our terms of contact.
+              </p>
+
+              <button class="submit" type="submit">
+                Send Message
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </section>
+
+    </main>
+
+        <!-- Footer Start -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Footer Brand -->
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">Bread Board</a>
+          <p>
+            Fresh ideas, quality service, and a better experience. We're here to
+            make things simple and enjoyable.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Development</a></li>
+            <li><a href="#">UI/UX Design</a></li>
+            <li><a href="#">Consulting</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p>Email: hello@breadboard.com</p>
+          <p>Phone: +234 800 000 0000</p>
+
+          <div class="social-links">
+            <a href="#">Fb</a>
+            <a href="#">Ig</a>
+            <a href="#">X</a>
+            <a href="#">In</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Bread Board. All rights reserved.</p>
+
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+  
+  </div>
+</body>
+</html>
